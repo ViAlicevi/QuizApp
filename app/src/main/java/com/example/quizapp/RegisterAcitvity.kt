@@ -3,15 +3,8 @@ package com.example.quizapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Patterns
-import android.widget.Toast
 import com.example.quizapp.databinding.ActivityRegisterAcitvityBinding
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.ktx.Firebase
-import java.util.regex.Pattern
 
 class RegisterAcitvity : AppCompatActivity() {
     private lateinit var binding: ActivityRegisterAcitvityBinding
@@ -43,7 +36,9 @@ class RegisterAcitvity : AppCompatActivity() {
                     binding.etPass.error = "Password must atleast 6 characters"
                 }
             }
-            else if (binding.phoneNumber.text.toString().isNotEmpty()&&binding.email.text.toString().isNotEmpty()&&binding.etName.text.toString().isNotEmpty()&&binding.etPass.text.toString().isNotEmpty()){
+            else if (binding.phoneNumber.text.toString().isNotEmpty()
+                &&binding.email.text.toString().isNotEmpty()
+                &&binding.etName.text.toString().isNotEmpty()&&binding.etPass.text.toString().isNotEmpty()){
                 val phonenumber: String = binding.phoneNumber.text.toString()
                 val email: String = binding.email.text.toString()
                 val name: String = binding.etName.text.toString()
