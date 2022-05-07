@@ -14,35 +14,45 @@ object Constants {
     fun getQuestion(): ArrayList<Question>{
         val questionList = ArrayList<Question>()
 
-        val que1 = Question(1, "What country does this flag belong to?",
+        val que1 = Question(1, "Which of following protocol is HTTP built upon? ",
         R.drawable.vietnam,
-            "Argentina",
-            "Australia",
-            "VietNam",
-            "America",
+            "TCP " ,
+            "UDP",
+            "IP " ,
+            "ICMP ",
             1
         )
         questionList.add(que1)
 
-        val que2 = Question(2, "What country does this flag belong to?",
+        val que2 = Question(2, "  What was the concern of the telephone system that motivated the ARPANET design? ",
             R.drawable.vietnam,
-            "Argentina",
-            "Australia",
-            "VietNam",
-            "America",
-            2
+            "Vulnerability",
+            "Scalability",
+            "Efficiency",
+            "None of the mentioned ",
+            1
         )
         questionList.add(que2)
         //que3
-        val que3 = Question(3, "What country does this flag belong to?",
+        val que3 = Question(3, "Which of following requirements are necessary for packet networks to support multiple and diverse applications? ",
             R.drawable.ic_launcher_background,
-            "Argentina",
-            "Australia",
-            "VietNam",
-            "America",
-            3
+            "Transfer arbitrary message size ",
+            "All of the mentioned ",
+            "Low delay for interfactive applications ",
+            "Packets have maximum length ",
+            2
         )
         questionList.add(que3)
+
+        val que4 = Question(4, "Which of the following is an application layer protocol?  ",
+            R.drawable.ic_launcher_background,
+            "DNS",
+            "HTTP",
+            "UDP",
+            "TCP",
+            2
+        )
+        questionList.add(que4)
 
         return questionList
     }

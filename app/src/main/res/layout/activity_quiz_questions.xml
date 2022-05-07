@@ -14,11 +14,19 @@
         android:orientation="vertical"
         android:padding="16dp"
         android:gravity="center">
+
+        <TextView
+            android:id="@+id/tv_nameuser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:textSize="20dp"
+            android:text="vi"/>
         <TextView
             android:id="@+id/tv_question"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_margin="16dp"
             android:gravity="center"
             android:textColor="#363A43"
             android:textSize="20sp"
@@ -26,8 +34,8 @@
         <ImageView
             android:id="@+id/iv_image"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
             android:src="@drawable/vietnam"/>
         <LinearLayout
             android:id="@+id/ll_progress_details"
@@ -41,7 +49,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:max="3"
+                android:max="4"
                 android:minHeight="50dp"
                 android:progress="0"
                 android:indeterminate="false"/>

@@ -2,5 +2,8 @@
     <string name="app_name">QuizApp</string>
     <string name="must_login">You must login to continue</string>
     <string name="no_account">No account? <b>Sign in</b></string>
-    <string name="edt_name">Name</string>
+    <string name="edt_name">Email</string>
+    <string name="have_account">You have an account? <b>Log in</b></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

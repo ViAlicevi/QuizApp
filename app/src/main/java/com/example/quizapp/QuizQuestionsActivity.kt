@@ -42,7 +42,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener{
     }
     private fun setQuestion(){
 
-        val question = mQuestionsList!!.get(mCurrentPosition)
+        val question = mQuestionsList!!.get(mCurrentPosition )
 
         defaultOptionsView()
 
@@ -101,18 +101,19 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener{
                     mCurrentPosition++
 
                     when{
-                        mCurrentPosition <= mQuestionsList!!.size ->{
-                            setQuestion()
-                        }else ->{
-                            val intent = Intent(this, ResultActivity::class.java)
+                        mCurrentPosition == mQuestionsList!!.size ->{
+                            val intent = Intent(this@QuizQuestionsActivity, ResultActivity::class.java)
                         intent.putExtra(Constants.USER_NAME, mUserName)
                         intent.putExtra(Constants.CORRECT_ANSWERS, mCorrectAnswers)
                         intent.putExtra(Constants.TOTAL_QUESTIONS, mQuestionsList!!.size)
-                        startActivity(intent)
+                            startActivity(intent)
+
+                        }else ->{
+                        setQuestion()
                         }
                     }
                 }else{
-                    val question = mQuestionsList?.get(mCurrentPosition -1)
+                    val question = mQuestionsList?.get(mCurrentPosition)
                     if (question!!.correctAnswer != mSelectedOptionPosition){
                         answerView(mSelectedOptionPosition, R.drawable.wrong_option_border_bg)
                     }else{
