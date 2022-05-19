@@ -4,20 +4,34 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/drawable/background.xml" value="0.181" />
         <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/drawable/correct_option_border_bg.xml" value="0.1" />
         <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/drawable/default_option_border_bg.xml" value="0.176" />
+        <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/drawable/ic_baseline_find_in_page_24.xml" value="0.164" />
+        <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.2595" />
+        <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.181" />
         <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/drawable/radius.xml" value="0.2595" />
         <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/drawable/selected_option_border_bg.xml" value="0.1" />
         <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/drawable/wrong_option_border_bg.xml" value="0.1" />
-        <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/layout/activity_forgot_password.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/layout/activity_quiz_questions.xml" value="0.1" />
+        <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/layout/activity_bach_khoa.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/layout/activity_detail_bach_khoa.xml" value="0.1" />
+        <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/layout/activity_forgot_password.xml" value="0.1" />
+        <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/layout/activity_kind_question.xml" value="0.1" />
+        <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/layout/activity_quiz_questions.xml" value="0.2" />
         <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/layout/activity_register_acitvity.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/layout/activity_result.xml" value="0.16" />
+        <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/layout/activity_screen.xml" value="0.12222222222222222" />
         <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/layout/activity_second.xml" value="0.24010416666666667" />
-        <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/layout/fragment_account.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/layout/fragment_question.xml" value="0.1" />
-        <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/layout/fragment_settings.xml" value="0.12360688956433637" />
+        <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/layout/activity_secret.xml" value="0.1" />
+        <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/layout/fragment_account.xml" value="0.1" />
+        <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/layout/fragment_detail.xml" value="0.2" />
+        <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/layout/fragment_question.xml" value="0.2" />
+        <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/layout/fragment_settings.xml" value="0.1" />
+        <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/layout/item_bach_khoa.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/layout/item_question.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/layout/item_secret.xml" value="0.1" />
         <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/menu/bottom_menu.xml" value="0.25416666666666665" />
       </map>
     </option>

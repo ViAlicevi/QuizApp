@@ -12,15 +12,25 @@ class ResultActivity : AppCompatActivity() {
         binding = ActivityResultBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val username = intent.getStringExtra(Constants.USER_NAME)
-        binding.tvName.text = username
+      //  val username = intent.getStringExtra(Constants.USER_NAME)
+   //     binding.tvName.text = username
         val totalQuestions = intent.getIntExtra(Constants.TOTAL_QUESTIONS, 0)
         val correctAnswer = intent.getIntExtra(Constants.CORRECT_ANSWERS, 0)
 
-        binding.tvScore.text = "Your score is $correctAnswer out of $totalQuestions"
+        binding.tvScore.text  = "Your score is $correctAnswer out of $totalQuestions"
 
         binding.btnFinish.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
+           startActivity(Intent(this, SecondActivity::class.java))
+
+        }
+        binding.btnShare.setOnClickListener {
+            val result = binding.tvScore.text.toString()
+            val intent = Intent()
+            intent.action = Intent.ACTION_SEND
+            intent.putExtra(Intent.EXTRA_COMPONENT_NAME, result)
+            intent.type = "text/plain"
+
+            startActivity(Intent.createChooser(intent, "Share to: "))
         }
     }
 }

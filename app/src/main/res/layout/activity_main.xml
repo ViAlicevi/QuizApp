@@ -4,34 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:orientation="vertical"
     android:background="@drawable/back_ground"
     tools:context=".MainActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:textColor="#2d835f"
+        android:textSize="50dp"
+        android:textStyle="bold"/>
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="16dp">
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/app_name"
-                android:textColor="#2D3E2E"
-                android:textSize="30sp"
-                android:textStyle="bold"/>
+            android:gravity="center"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingTop="80dp">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/must_login"
-                android:textColor="#7A8089"
-                android:textSize="20sp"
-                android:textStyle="bold"/>
+
+
 
                 <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/edt_name"
@@ -40,8 +37,10 @@
                     android:hint="@string/edt_name"
                     android:textColor="#363A43"
                     android:paddingTop="25dp"
+                    android:padding="16dp"
+
+                    android:background="@drawable/radius"
                     android:layout_marginTop="20dp"
-                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:textColorHint="#7A8089"/>
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
@@ -55,6 +54,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Password"
+                    android:layout_marginTop="16dp"
+                    android:padding="16dp"
+                    android:imeOptions="actionDone"
+                    android:background="@drawable/radius"
                     android:inputType="textPassword"/>
                 <TextView
                     android:id="@+id/tv_forgotpassword"
@@ -66,12 +69,14 @@
 
                 <Button
                     android:id="@+id/btn_start"
-                    android:layout_width="match_parent"
+                    android:layout_width="150dp"
+                    android:layout_gravity="center"
+
                     android:layout_height="wrap_content"
                     android:text="Login"
                     android:textSize="18sp"
                     android:layout_marginTop="16dp"
-                    android:background="@color/purple_500"
+                    android:backgroundTint="@color/orange"
                     android:textColor="@color/white">
 
                 </Button>
@@ -86,6 +91,24 @@
                     android:layout_marginTop="16dp">
 
                 </TextView>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:paddingTop="25dp"
+                    android:layout_height="wrap_content">
+
+                    <androidx.constraintlayout.utils.widget.ImageFilterButton
+                        android:id="@+id/fb_login"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="150dp"
+                        android:src="@drawable/facebook"/>
+
+                    <androidx.constraintlayout.utils.widget.ImageFilterButton
+                        android:id="@+id/google_login"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/google"/>
+                </LinearLayout>
 
             </com.google.android.material.textfield.TextInputLayout>
         </LinearLayout>

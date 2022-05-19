@@ -5,30 +5,25 @@ import android.graphics.Color
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.TextView
 import androidx.core.content.ContextCompat
+import com.example.quizapp.adapter.KindQuestion
 import com.example.quizapp.data.Question
+import com.example.quizapp.databinding.ActivityKindQuestionBinding
 import com.example.quizapp.databinding.ActivityQuizQuestionsBinding
-import com.google.firebase.database.*
-
-class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener{
-
+class KindQuestionActivity : AppCompatActivity(), View.OnClickListener {
     private var mCurrentPosition: Int = 1
     private var mQuestionsList: ArrayList<Question>? = null
     private var mSelectedOptionPosition: Int = 0
     private var mCorrectAnswers: Int = 0
 
-   // private lateinit var databaseReference: DatabaseReference
-
-
-    private lateinit var binding: ActivityQuizQuestionsBinding
+    private lateinit var binding: ActivityKindQuestionBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityQuizQuestionsBinding.inflate(layoutInflater)
+        binding = ActivityKindQuestionBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        mQuestionsList = Constants.getQuestion()
+        mQuestionsList = KindQuestion.getQuestion()
 
 
         binding.tvOptionOne.setOnClickListener(this)
@@ -39,11 +34,9 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener{
         binding.btnSubmit.setOnClickListener(this)
         setQuestion()
 
-
-
     }
     private fun setQuestion(){
-      //  mCurrentPosition = 1
+        //  mCurrentPosition = 1
 
         defaultOptionsView()
 
@@ -67,7 +60,6 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener{
             binding.btnSubmit.text = "Submit"
 
         }
-
 
     }
 
@@ -111,16 +103,16 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener{
                         mCurrentPosition == mQuestionsList!!.size ->{
 
 
-                            val intent = Intent(this@QuizQuestionsActivity, ResultActivity::class.java)
-                            intent.putExtra(Constants.CORRECT_ANSWERS, mCorrectAnswers)
-                            intent.putExtra(Constants.TOTAL_QUESTIONS, mQuestionsList!!.size)
+                            val intent = Intent(this@KindQuestionActivity, ResultActivity::class.java)
+                            intent.putExtra(KindQuestion.CORRECT_ANSWERS, mCorrectAnswers)
+                            intent.putExtra(KindQuestion.TOTAL_QUESTIONS, mQuestionsList!!.size)
                             startActivity(intent)
 
                         }else ->{
 
                         setQuestion()
 
-                    }
+                        }
                     }
                 }else{
                     val question = mQuestionsList?.get(mCurrentPosition -1)
