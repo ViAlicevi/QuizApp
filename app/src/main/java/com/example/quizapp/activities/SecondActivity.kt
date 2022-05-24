@@ -1,9 +1,10 @@
-package com.example.quizapp
+package com.example.quizapp.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.quizapp.R
 import com.example.quizapp.databinding.ActivitySecondBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 

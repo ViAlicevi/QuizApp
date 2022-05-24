@@ -13,35 +13,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.QuizApp">
         <activity
-            android:name=".SecretActivity"
+            android:name=".activities.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".DetailBachKhoaActivity"
+            android:name=".activities.DetailActivity"
             android:exported="false" />
         <activity
-            android:name=".BachKhoaActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".KindQuestionActivity"
+            android:name=".activities.FlashActivity"
             android:exported="false" />
         <activity
-            android:name=".SecondActivity"
+            android:name=".activities.SecondActivity"
             android:exported="false" />
         <activity
-            android:name=".ForgotPasswordActivity"
+            android:name=".activities.ForgotPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterAcitvity"
+            android:name=".activities.RegisterAcitvity"
             android:exported="false" />
         <activity
-            android:name=".ResultActivity"
-            android:exported="false" />
-        <activity
-            android:name=".QuizQuestionsActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
+            android:name=".activities.PostActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>

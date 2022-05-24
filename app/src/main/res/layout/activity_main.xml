@@ -5,15 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/back_ground"
-    tools:context=".MainActivity">
+    android:background="@drawable/radius"
+    tools:context=".activities.MainActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="@string/app_name"
-        android:textColor="#2d835f"
+        android:textColor="#BC9355"
         android:textSize="50dp"
         android:textStyle="bold"/>
 
@@ -39,7 +39,7 @@
                     android:paddingTop="25dp"
                     android:padding="16dp"
 
-                    android:background="@drawable/radius"
+                    android:background="@drawable/bg_button_white"
                     android:layout_marginTop="20dp"
                     android:textColorHint="#7A8089"/>
             <com.google.android.material.textfield.TextInputLayout
@@ -57,7 +57,7 @@
                     android:layout_marginTop="16dp"
                     android:padding="16dp"
                     android:imeOptions="actionDone"
-                    android:background="@drawable/radius"
+                    android:background="@drawable/bg_button_white"
                     android:inputType="textPassword"/>
                 <TextView
                     android:id="@+id/tv_forgotpassword"

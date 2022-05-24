@@ -7,7 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.quizapp.MainActivity
+import com.example.quizapp.activities.MainActivity
 import com.example.quizapp.databinding.FragmentAccountBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -26,20 +26,7 @@ class AccountFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.d(TAG, "onCreate")
-//        firebaseAuth = FirebaseAuth.getInstance()
-//        checkUser()
     }
-
-//    private fun checkUser() {
-//        val firebaseUser = firebaseAuth.currentUser
-//        if (firebaseUser == null){
-//            startActivity(Intent(this.requireContext(), MainActivity::class.java))
-//
-//        }else{
-//            val email = firebaseUser.email
-//            binding.tvemail.text = email
-//        }
-//    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
