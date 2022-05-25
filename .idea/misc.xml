@@ -14,9 +14,11 @@
         <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.2595" />
         <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.181" />
         <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/drawable/ic_replay.xml" value="0.1765" />
         <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/drawable/radius.xml" value="0.2595" />
         <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/drawable/selected_option_border_bg.xml" value="0.1" />
         <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/drawable/wrong_option_border_bg.xml" value="0.1" />
+        <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/layout/activity_account.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/layout/activity_bach_khoa.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/layout/activity_detail.xml" value="0.17883211678832117" />
         <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/layout/activity_detail_bach_khoa.xml" value="0.1" />
@@ -24,7 +26,7 @@
         <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/layout/activity_forgot_password.xml" value="0.1" />
         <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/layout/activity_kind_question.xml" value="0.1" />
         <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/layout/activity_post.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/layout/activity_post.xml" value="0.1" />
         <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/layout/activity_quiz_questions.xml" value="0.2" />
         <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/layout/activity_register_acitvity.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/tvi26/AndroidStudioProjects/QuizApp/app/src/main/res/layout/activity_result.xml" value="0.16" />

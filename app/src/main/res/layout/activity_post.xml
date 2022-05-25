@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/size_20dp"
         android:layout_marginEnd="@dimen/size_20dp"
-        android:src="@drawable/ic_sign_out"
+        android:src="@drawable/ic_baseline_person_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

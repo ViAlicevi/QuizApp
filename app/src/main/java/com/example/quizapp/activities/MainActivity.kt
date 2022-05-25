@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import com.example.quizapp.databinding.ActivityMainBinding
-import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 
@@ -83,7 +82,7 @@ class MainActivity : AppCompatActivity() {
     private fun updateUI(user: FirebaseUser?) {
         if (user != null){
             Log.d(TAG, "current user: $user")
-            val intent = Intent(this, SecondActivity::class.java)
+            val intent = Intent(this, PostActivity::class.java)
             startActivity(intent)
             finish()
         }

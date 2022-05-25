@@ -12,15 +12,11 @@ import com.example.quizapp.databinding.ActivityPostBinding
 import com.google.firebase.firestore.FirebaseFirestore
 
 class PostActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityPostBinding
     private lateinit var recycle: RecyclerView
     private lateinit var postList: ArrayList<Food>
     private lateinit var postAdapter: FoodAdapter
- //   private lateinit var dbref: DatabaseReference
-
-    companion object{
-        val INTENT_PARCELABLE = "OBJECT_INTENT"
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,14 +24,16 @@ class PostActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         recycle = binding.rvPost
-            recycle.layoutManager = StaggeredGridLayoutManager(1, RecyclerView.VERTICAL)
+      //  recycle.layoutManager = LinearLayoutManager(this)
 
+        recycle.layoutManager = StaggeredGridLayoutManager(2, RecyclerView.VERTICAL)
+            initAdapter()
         recycle.setHasFixedSize(true)
-
+        recycle.adapter = postAdapter
         postList = arrayListOf()
 
-
         getData()
+
 
         clickBack()
 
@@ -48,19 +46,37 @@ class PostActivity : AppCompatActivity() {
             .addOnSuccessListener { documents ->
                 for (document in documents){
 
-                        val foodrp = documents.toObjects(Food::class.java)
-                    binding.rvPost.adapter = FoodAdapter(this, foodrp)
-
+                        val foodrp = document.toObject(Food::class.java)
+//                    Log.d("Post", "${foodrp.foodName}")
+                    postList.add(foodrp)
                 }
+                postAdapter.setFoods(postList)
+
 
             }.addOnFailureListener {
                 Toast.makeText(this, " ${it.message}", Toast.LENGTH_SHORT).show()
             }
 
+
     }
+    private fun initAdapter() {
+        postAdapter = FoodAdapter {
+            openDetail(it)
+        }
+    }
+    private fun openDetail(position: Int) {
+        val intent = Intent(this@PostActivity, DetailActivity::class.java)
+        intent.putExtra(DetailActivity.INTENT_PARCELABLE , postList[position])
+        startActivity(intent)
+    }
+
+
     private fun clickBack(){
         binding.imgSignOut.setOnClickListener {
+            val intent = Intent(this@PostActivity, AccountActivity::class.java)
+            startActivity(intent)
             finish()
         }
     }
 }
+

@@ -1,57 +1,90 @@
 package com.example.quizapp.adapter
 
 import android.content.Context
-import android.media.Image
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.quizapp.R
 import com.example.quizapp.data.Food
+import com.example.quizapp.databinding.ItemSecretBinding
 
 
-class FoodAdapter(private val context: Context,
-                  private val foods:  List<Food>,
-            //      val listener: (Food) -> Unit
+class FoodAdapter(
+    private val listener: (Int) -> Unit
 ): RecyclerView.Adapter<FoodViewHolder>() {
+
+    private var foods: ArrayList<Food> = arrayListOf()
+
+    inner class MyDiffUtil(
+        private val newList: ArrayList<Food>,
+        private val oldList: ArrayList<Food>
+    ) : DiffUtil.Callback() {
+        override fun getOldListSize(): Int {
+            return oldList.size
+        }
+
+        override fun getNewListSize(): Int {
+            return newList.size
+        }
+
+        override fun areItemsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
+            return oldList[oldItemPosition].foodName == newList[newItemPosition].foodName
+        }
+
+        override fun areContentsTheSame(oldItemPosition: Int, newItemPosition: Int): Boolean {
+            return oldList == newList
+        }
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FoodViewHolder {
 
-        return FoodViewHolder(
-            LayoutInflater.from(context).inflate(R.layout.item_secret, parent, false )
-        )
+        return FoodViewHolder.from(parent, listener)
     }
 
     override fun onBindViewHolder(holder: FoodViewHolder, position: Int) {
 
-        val food = foods[position]
-       // holder.binView(foods[position])
-     //   holder.url.setImageResource(food.url!!)
-        holder.foodName.text = food.foodName
-
-        Glide.with(context)
-            .load(food.url)
-            .into(holder.url)
+        val imageItem = getItemId(position)
+        holder.bind(foods[position])
 
     }
 
     override fun getItemCount() = foods.size
 
+    fun setFoods(newList: ArrayList<Food>) {
+        val diffUtil = MyDiffUtil(oldList = foods, newList = newList)
+        val diffResult = DiffUtil.calculateDiff(diffUtil)
+        foods = newList
+        diffResult.dispatchUpdatesTo(this)
+    }
+
 }
 
-class FoodViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+class FoodViewHolder private constructor(
+    private val binding: ItemSecretBinding,
+    private val listener: (Int) -> Unit
+                    ): RecyclerView.ViewHolder(binding.root){
 
-    val url: ImageView = itemView.findViewById(R.id.imgPostImage)
-    val foodName : TextView = itemView.findViewById(R.id.tvFoodName)
+    companion object {
+        fun from(parent: ViewGroup, listener: (Int) -> Unit): FoodViewHolder {
+            val binding =
+                ItemSecretBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            return FoodViewHolder(binding, listener)
+        }
+    }
 
-//    fun binView(img: Food, listener: (Food) -> Unit){
-//        url.setImageResource(img.url!!)
-//        foodName.text = img.foodName
-//        itemView.setOnClickListener { listener(img) }
-//    }
-
+    fun bind(post: Food) {
+        with(binding) {
+            card.setOnClickListener {
+                listener(absoluteAdapterPosition)
+            }
+            Glide.with(imgPostImage.context)
+                .load(post.url)
+                .placeholder(R.drawable.ic_replay)
+                .into(imgPostImage)
+            tvFoodName.text = post.foodName
+        }
+    }
 
 }
