@@ -13,16 +13,23 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.QuizApp">
         <activity
+            android:name=".activities.PostRecipeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.AddFoodRecipeActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.AccountActivity"
             android:exported="false" />
         <activity
             android:name=".activities.MainActivity"
             android:exported="false" />
         <activity
+            android:name=".activities.PostActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.DetailActivity"
-            android:exported="false" /> <!-- <activity -->
-        <!-- android:name=".activities.PostActivity" -->
-        <!-- android:exported="false" /> -->
+            android:exported="false" />
         <activity
             android:name=".activities.SecondActivity"
             android:exported="false" />
@@ -33,7 +40,7 @@
             android:name=".activities.RegisterAcitvity"
             android:exported="false" />
         <activity
-            android:name=".activities.PostActivity"
+            android:name=".activities.FlashActivity"
             android:exported="true"
             android:screenOrientation="portrait">
             <intent-filter>

@@ -3,12 +3,16 @@ package com.example.quizapp.activities
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.SearchView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.quizapp.adapter.FoodAdapter
 import com.example.quizapp.data.Food
 import com.example.quizapp.databinding.ActivityPostBinding
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
 import com.google.firebase.firestore.FirebaseFirestore
 
 class PostActivity : AppCompatActivity() {
@@ -36,6 +40,12 @@ class PostActivity : AppCompatActivity() {
 
 
         clickBack()
+        openPostRecipe()
+
+        binding.btnSearch.setOnClickListener {
+
+            searchByName(binding.tvSeach.text.toString())
+        }
 
     }
 
@@ -72,11 +82,47 @@ class PostActivity : AppCompatActivity() {
 
 
     private fun clickBack(){
+
         binding.imgSignOut.setOnClickListener {
             val intent = Intent(this@PostActivity, AccountActivity::class.java)
             startActivity(intent)
             finish()
         }
+    }
+    private fun openPostRecipe(){
+        binding.btnPost.setOnClickListener {
+            val intent = Intent(this@PostActivity, PostRecipeActivity::class.java )
+            startActivity(intent)
+            finish()
+        }
+    }
+
+    private fun searchByName(name: String) {
+
+        FirebaseFirestore.getInstance().collection("food")
+            .get()
+            .addOnSuccessListener { documents ->
+                postList.clear()
+                if (name == "") {
+                    getData()
+                } else {
+                    for (document in documents){
+
+                        val foodrp = document.toObject(Food::class.java)
+
+                        if (foodrp.foodName!!.indexOf(name)!=-1){
+                            postList.add(foodrp)
+                        }
+
+                    }
+                    postAdapter.setFoods(postList)
+
+                }
+
+
+            }.addOnFailureListener {
+                Toast.makeText(this, " ${it.message}", Toast.LENGTH_SHORT).show()
+            }
     }
 }
 

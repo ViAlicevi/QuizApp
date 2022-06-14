@@ -82,7 +82,7 @@ class RegisterAcitvity : AppCompatActivity() {
     private fun updateUI(user: FirebaseUser?) {
         if (user != null){
             println("current user: $user")
-            val intent = Intent(this, SecondActivity::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
         }

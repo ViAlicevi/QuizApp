@@ -1,7 +1,10 @@
 package com.example.quizapp.activities
 
+import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
@@ -23,6 +26,9 @@ class DetailActivity : AppCompatActivity() {
 
      //   val food = intent.getParcelableExtra<Food>(PostActivity.INTENT_PARCELABLE)
         showInformation()
+        shareRecipe()
+        SourceRecipes()
+        Sourceyoutube()
 
        // imgSrc.setImageResource(food?.url!!)
 //        imgTitle.text = food.foodName
@@ -39,6 +45,10 @@ class DetailActivity : AppCompatActivity() {
                 .into(imgDetail)
 
             tvTwitterDetail.text = imageData?.Description
+            tvInstagramDetail.text = imageData?.foodName
+            tvUrl.text = imageData?.link
+            tvSource.text = imageData?.source
+            tvYoutube.text = imageData?.sourceYoutube
 
         }
     }
@@ -47,5 +57,38 @@ class DetailActivity : AppCompatActivity() {
             finish()
         }
 
+    }
+    private fun shareRecipe(){
+        binding.tvShareRecipe.setOnClickListener {
+
+            val intent = Intent()
+            intent.action = Intent.ACTION_SEND
+            intent.type = "text/plain"
+
+            startActivity(Intent.createChooser(intent, "share to: "))
+        }
+    }
+    private fun SourceRecipes(){
+        val Source = intent.getStringExtra(INTENT_PARCELABLE)
+        binding.tvSource.setOnClickListener { v: View? ->
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(Source)
+            startActivity(intent)
+        }
+
+        binding.tvYoutube.setOnClickListener { v: View? ->
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(Source)
+            startActivity(intent)
+        }
+    }
+
+    private fun Sourceyoutube(){
+        val Source = intent.getStringExtra(INTENT_PARCELABLE)
+        binding.tvYoutube.setOnClickListener { v: View? ->
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(Source)
+            startActivity(intent)
+        }
     }
 }
