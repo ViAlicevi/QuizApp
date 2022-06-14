@@ -12,7 +12,7 @@ data class Food(
     val Description: String? = null,
     val link: String? = null,
     val source: String? = null,
-    val sourceYoutube: String? = null
+   // val sourceYoutube: String? = null
 
 ) : Parcelable {
 

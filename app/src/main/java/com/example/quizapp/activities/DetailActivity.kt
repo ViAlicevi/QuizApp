@@ -48,7 +48,7 @@ class DetailActivity : AppCompatActivity() {
             tvInstagramDetail.text = imageData?.foodName
             tvUrl.text = imageData?.link
             tvSource.text = imageData?.source
-            tvYoutube.text = imageData?.sourceYoutube
+            //tvYoutube.text = imageData?.sourceYoutube
 
         }
     }
